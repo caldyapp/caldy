@@ -5,6 +5,15 @@ from caldy.models.base import BaseIDModel
 
 
 class UserManager(BaseUserManager):
+    def create_user(self, email, password, full_name=""):
+        user = self.model(
+            email=self.normalize_email(email),
+            full_name=full_name,
+        )
+        user.set_password(password)
+        user.save(using=self._db)
+        return user
+
     def create_superuser(self, email, full_name, password):
         user = self.model(
             email=self.normalize_email(email),

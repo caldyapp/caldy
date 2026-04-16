@@ -1,0 +1,87 @@
+{% extends "caldy/base.html" %}
+
+{% block title %}Sign In — Caldy{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-9 col-md-6 col-lg-5">
+
+      <div class="mt-5 mb-2">
+        <p class="small-caps mb-1">caldy / accounts</p>
+        <h1 style="font-size: 28px;">sign in</h1>
+        <p class="text-muted mt-1">enter your credentials to continue.</p>
+      </div>
+
+      <hr class="retro" />
+
+      <div class="retro-card">
+        <form method="post" novalidate>
+          {% csrf_token %}
+
+          {% if form.non_field_errors %}
+          <div class="alert alert-danger mb-3" role="alert">
+            {% for error in form.non_field_errors %}
+              {{ error }}
+            {% endfor %}
+          </div>
+          {% endif %}
+
+          <div class="mb-3">
+            <label for="{{ form.email.id_for_label }}" class="form-label">
+              email address
+            </label>
+            <input
+              type="email"
+              id="{{ form.email.id_for_label }}"
+              name="{{ form.email.html_name }}"
+              class="form-control{% if form.email.errors %} is-invalid{% endif %}"
+              value="{{ form.email.value|default:'' }}"
+              placeholder="you@example.com"
+              autocomplete="email"
+              required
+            />
+            {% if form.email.errors %}
+            <div class="invalid-feedback" style="font-family: 'IBM Plex Mono', 'Courier New', monospace; font-size: 12px;">
+              {% for error in form.email.errors %}{{ error }}{% endfor %}
+            </div>
+            {% endif %}
+          </div>
+
+          <div class="mb-4">
+            <label for="{{ form.password.id_for_label }}" class="form-label">
+              password
+            </label>
+            <input
+              type="password"
+              id="{{ form.password.id_for_label }}"
+              name="{{ form.password.html_name }}"
+              class="form-control{% if form.password.errors %} is-invalid{% endif %}"
+              placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;"
+              autocomplete="current-password"
+              required
+            />
+            {% if form.password.errors %}
+            <div class="invalid-feedback" style="font-family: 'IBM Plex Mono', 'Courier New', monospace; font-size: 12px;">
+              {% for error in form.password.errors %}{{ error }}{% endfor %}
+            </div>
+            {% endif %}
+          </div>
+
+          <button type="submit" class="btn-retro" style="font-size: 14px; font-weight: 700;">
+            sign in &rarr;
+          </button>
+        </form>
+      </div>
+
+      <hr class="retro" />
+
+      <p style="font-size: 13px;">
+        don't have an account?
+        <a href="{% url 'register' %}">create one</a>
+      </p>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

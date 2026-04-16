@@ -122,6 +122,10 @@ STATIC_URL = "static/"
 
 AUTH_USER_MODEL = "caldy.User"
 
+LOGIN_URL = "/accounts/login/"
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/accounts/login/"
+
 # ---------------------------------------------------------------------------
 # Email  — all values come from the Config table; defaults are safe fallbacks
 # used at process startup before AppConfig.ready() runs the first DB load.

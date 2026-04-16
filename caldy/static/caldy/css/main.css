@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap');
+
+/* ── Retro base ─────────────────────────────────────────────── */
+:root {
+  --off-white:  #f5f4f0;
+  --ink:        #111111;
+  --border:     #111111;
+  --muted:      #555555;
+  --input-bg:   #ffffff;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: var(--off-white);
+  color: var(--ink);
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  font-size: 14px;
+  min-height: 100vh;
+}
+
+/* ── Typography ─────────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+p, span, label, li {
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+}
+
+/* ── Links — black, underlined, never blue ──────────────────── */
+a,
+a:visited,
+a:hover,
+a:active,
+a:focus {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  opacity: 0.65;
+}
+
+/* ── Submit buttons rendered as links ───────────────────────── */
+.btn-retro {
+  display: inline;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: var(--ink);
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  font-size: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.btn-retro:hover {
+  opacity: 0.65;
+  color: var(--ink);
+}
+
+/* ── Forms ──────────────────────────────────────────────────── */
+.form-control,
+.form-select {
+  background-color: var(--input-bg);
+  border: 1px solid var(--border);
+  border-radius: 0;
+  color: var(--ink);
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  font-size: 14px;
+  padding: 0.5rem 0.75rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+  background-color: var(--input-bg);
+  border-color: var(--ink);
+  box-shadow: none;
+  color: var(--ink);
+  outline: 2px solid var(--ink);
+  outline-offset: -1px;
+}
+
+.form-label {
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ── Alerts / messages ──────────────────────────────────────── */
+.alert {
+  border-radius: 0;
+  border: 1px solid var(--border);
+  background-color: var(--off-white);
+  color: var(--ink);
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  font-size: 13px;
+}
+
+.alert-danger  { border-left: 4px solid var(--ink); }
+.alert-success { border-left: 4px solid var(--ink); }
+.alert-info    { border-left: 4px solid var(--ink); }
+
+/* ── Navbar ─────────────────────────────────────────────────── */
+.retro-nav {
+  background-color: var(--off-white);
+  border-bottom: 1px solid var(--border);
+  padding: 0.75rem 0;
+}
+
+.retro-nav .brand {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  text-decoration: none;
+}
+
+.retro-nav .brand:hover {
+  opacity: 0.65;
+}
+
+.retro-nav .nav-link {
+  color: var(--ink);
+  font-size: 13px;
+  padding: 0;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.retro-nav .nav-link:hover {
+  opacity: 0.65;
+}
+
+/* ── Page card ──────────────────────────────────────────────── */
+.retro-card {
+  border: 1px solid var(--border);
+  background-color: var(--off-white);
+  padding: 2rem 2.5rem;
+}
+
+/* ── Divider ────────────────────────────────────────────────── */
+hr.retro {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 1.5rem 0;
+}
+
+/* ── Footer ─────────────────────────────────────────────────── */
+.retro-footer {
+  border-top: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--muted);
+  padding: 1rem 0;
+  margin-top: auto;
+}
+
+/* ── Utilities ──────────────────────────────────────────────── */
+.text-muted {
+  color: var(--muted) !important;
+  font-size: 12px;
+}
+
+.small-caps {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
