@@ -13,8 +13,6 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 import os
 from pathlib import Path
 
-from caldy.config import config
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -126,22 +124,3 @@ LOGIN_URL = "/accounts/login/"
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/accounts/login/"
 
-# ---------------------------------------------------------------------------
-# Email  — all values come from the Config table; defaults are safe fallbacks
-# used at process startup before AppConfig.ready() runs the first DB load.
-# ---------------------------------------------------------------------------
-EMAIL_BACKEND = config.get("EMAIL_BACKEND", default="django.core.mail.backends.console.EmailBackend")
-EMAIL_HOST = config.get("EMAIL_HOST", default="localhost")
-EMAIL_PORT = config.get("EMAIL_PORT", default=587)
-EMAIL_USE_TLS = config.get("EMAIL_USE_TLS", default=True)
-EMAIL_HOST_USER = config.get("EMAIL_HOST_USER", default="")
-EMAIL_HOST_PASSWORD = config.get("EMAIL_HOST_PASSWORD", default="")
-DEFAULT_FROM_EMAIL = config.get("DEFAULT_FROM_EMAIL", default="noreply@example.com")
-
-# ---------------------------------------------------------------------------
-# Storage (S3 / django-storages)
-# ---------------------------------------------------------------------------
-AWS_ACCESS_KEY_ID = config.get("AWS_ACCESS_KEY_ID", default="")
-AWS_SECRET_ACCESS_KEY = config.get("AWS_SECRET_ACCESS_KEY", default="")
-AWS_STORAGE_BUCKET_NAME = config.get("AWS_STORAGE_BUCKET_NAME", default="")
-AWS_S3_REGION_NAME = config.get("AWS_S3_REGION_NAME", default="us-east-1")

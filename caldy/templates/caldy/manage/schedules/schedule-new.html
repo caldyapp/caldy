@@ -1,0 +1,15 @@
+{% extends "caldy/manage/base.html" %}
+
+{% block title %}new schedule / manage / caldy{% endblock %}
+{% block nav_schedules %}active{% endblock %}
+
+{% block content %}
+<div class="d-flex align-items-baseline justify-content-between mb-4">
+  <h2 class="mb-0">new schedule</h2>
+  <a href="{% url 'manage-schedule-list' account.handle %}">← back</a>
+</div>
+
+<hr class="retro" />
+
+<p class="text-muted">form coming soon.</p>
+{% endblock %}

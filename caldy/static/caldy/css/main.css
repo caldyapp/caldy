@@ -115,7 +115,7 @@ a:hover {
 .retro-nav {
   background-color: var(--off-white);
   border-bottom: 1px solid var(--border);
-  padding: 0.75rem 0;
+  padding: 0.65rem 0;
 }
 
 .retro-nav .brand {
@@ -162,6 +162,126 @@ hr.retro {
   color: var(--muted);
   padding: 1rem 0;
   margin-top: auto;
+}
+
+/* ── Manage layout ──────────────────────────────────────────── */
+.manage-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 3.5rem;
+}
+
+.manage-page-header {
+  border-bottom: 1px solid var(--border);
+  padding-top: 1.25rem;
+}
+
+.manage-brand {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+.manage-account-info {
+  margin-top: 0;
+}
+
+.manage-avatar {
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--border);
+  background: var(--ink);
+  color: var(--off-white);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.manage-avatar:hover {
+  opacity: 0.8;
+}
+
+.manage-dropdown {
+  border: 1px solid var(--border);
+  border-radius: 0;
+  background: var(--off-white);
+  padding: 0.25rem 0;
+  min-width: 160px;
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.08);
+}
+
+.manage-dropdown-item {
+  display: block;
+  padding: 0.4rem 1rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 13px;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.manage-dropdown-item:hover {
+  background-color: rgba(0,0,0,0.04);
+  color: var(--ink);
+}
+
+.manage-dropdown-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 0.25rem 0;
+}
+
+.manage-account-handle {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.manage-account-name {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 1px;
+}
+
+.manage-tabs {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.manage-tab-icon {
+  width: 14px;
+  height: 14px;
+  margin-right: 0.35rem;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+}
+
+.manage-tab {
+  display: inline-block;
+  font-size: 13px;
+  text-decoration: none;
+  color: var(--muted);
+  padding: 0.5rem 0;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+
+.manage-tab:hover {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.manage-tab.active {
+  color: var(--ink);
+  font-weight: 700;
+  border-bottom: 2px solid var(--ink);
+  text-decoration: none;
 }
 
 /* ── Utilities ──────────────────────────────────────────────── */

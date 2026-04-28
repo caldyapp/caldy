@@ -23,3 +23,12 @@ class BaseIDModel(models.Model):
             if not self.id:
                 self.id = f"{self.ID_PREFIX}_{uuid.uuid7().hex.lower()}"
         return super().save(*args, **kwargs)
+
+
+
+class TimestampModel(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        abstract = True

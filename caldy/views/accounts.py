@@ -10,9 +10,13 @@ class LoginView(View):
     template_name = "caldy/accounts/login.html"
 
     def get(self, request):
-        if request.user.is_authenticated:
-            return redirect("home")
-        return render(request, self.template_name, {"form": LoginForm()})
+        context = {
+            "form": LoginForm(),
+            "already_logged_in": request.user.is_authenticated
+        }
+        # if request.user.is_authenticated:
+        #     return redirect("home")
+        return render(request, self.template_name, context)
 
     def post(self, request):
         form = LoginForm(request=request, data=request.POST)
@@ -27,8 +31,8 @@ class RegisterView(View):
     template_name = "caldy/accounts/register.html"
 
     def get(self, request):
-        if request.user.is_authenticated:
-            return redirect("home")
+        # if request.user.is_authenticated:
+        #     return redirect("home")
         return render(request, self.template_name, {"form": RegisterForm()})
 
     def post(self, request):
